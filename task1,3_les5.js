@@ -11,10 +11,12 @@
 //     for (let row = 0; row <= sizeTable + 1; row++) {
 //         const elem = document.createElement('tr');
 //         contenerElements.appendChild(elem);
+
 //         for (let col = 0; col <= sizeTable + 1; col++) {
 //             const cell = document.createElement('td');
 //             contenerElements.appendChild(cell);
 //             elem.appendChild(cell);
+
 //             if (col == 0 | col == sizeTable + 1) {
 //                 cell.style.backgroundColor = 'white'
 //                 cell.style.border = '0px'
@@ -42,53 +44,69 @@
 
 // //Задание №3
 // const basket = {
-//     apple: {
+//     cardList: null,
+
+//     products: [{
+//         id: 1,
+//         product_name: 'apple',
 //         weight: 0,
 //         price: 30,
 //     },
 
-//     bananas: {
+//     {
+//         id: 12,
+//         product_name: 'bananas',
 //         weight: 0,
 //         price: 10,
 //     },
-//     garnet: {
-//         weight: 0,
+//     {
+//         id: 34,
+//         product_name: 'garnet',
+//         weight: 10,
 //         price: 20,
 //     },
-//     orange: {
+//     {
+//         id: 44,
+//         product_name: 'orange',
 //         weight: 1,
 //         price: 0,
 //     },
-
-
-// };
-
-// const getBasket = {
-
-//     sum: 0,
-//     n: 0,
-//     priceBasket() {
-//         for (const name in basket) {
-//             this.sum += basket[name].weight * basket[name].price
-//             this.n++
-//         }
-
+//     ],
+//     card(product) {
+//         return `<div >
+//                     <div><b>Наименование</b>: ${product.product_name}</div>
+//                     <div><b>Количество</b>: ${product.weight}</div>   
+//                     <div><b>Цена за шт.</b>: ${product.price}</div>               
+//                 </div>`;
 //     },
 
+//     general() {
+//         this.cardList = document.querySelector('.card');
 
-//     getTextSumBasket() {
-//         this.priceBasket();
-//         if (this.sum == 0) {
-//             return "Корзина пуста!"
-//         }
-//         else
-//             return `В корзине: ${this.n} товар(ов) на сумму ${this.sum} рублей`
+
+//         if (this.products.length) {
+//             this.products.forEach(product => {
+//                 this.cardList.insertAdjacentHTML('beforeend', this.card(product))
+//             });
+//             this.cardList.insertAdjacentHTML('beforeend', `В корзине: ${this.products.length} товар(ов) на сумму ${this.sumPrice()} рублей`);
+
+
+//         } else
+//             this.cardList.insertAdjacentHTML('beforeend', 'Корзина пуста');
+
+//     },
+//     sumPrice() {
+//         return this.products.reduce(function (sum, product) {
+//             return sum + product.weight * product.price
+
+//         }, 0)
+
 
 //     }
 
-// }
+// };
 
-// document.querySelector('body').insertAdjacentHTML('afterbegin', `<div><i> ${getBasket.getTextSumBasket()}</i></div>`)
+// basket.general()
 
 
 
