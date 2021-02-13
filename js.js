@@ -383,13 +383,7 @@ const game = {
         const nextHeadPoint = this.snake.getNextStepHeadPoint();
 
         return !this.snake.isOnPoint(nextHeadPoint) &&
-            !this.wall.isOnPoint(nextHeadPoint)
-            //  &&
-            // nextHeadPoint.x < this.config.getColsCount() &&
-            // nextHeadPoint.y < this.config.getRowsCount() &&
-            // nextHeadPoint.x >= 0 &&
-            // nextHeadPoint.y >= 0
-            ;
+            !this.wall.isOnPoint(nextHeadPoint);
     },
 
     isGameWon() {
