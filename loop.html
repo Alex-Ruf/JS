@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function makeCounter(a) {
+            var currentCount = 0;
+            var count = 0;
+            return function (a) {
+                count++
+                if (count == 5) {
+
+                    return currentCount = currentCount + a;
+                }
+                else
+                    currentCount = currentCount + a;
+
+            };
+        }
+
+        var counter = makeCounter();
+        counter(5);
+        counter(5);
+        counter(5);
+
+
+        console.log(counter(5));
+        console.log(counter(5));
+
+
+
+
+
+    </script>
+</body>
+
+</html>
